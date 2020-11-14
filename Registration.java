@@ -49,7 +49,7 @@ public class Registration extends javax.swing.JFrame {
         txt_licence = new javax.swing.JTextField();
         btn_register = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lbl_registration.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
         lbl_registration.setText("REGISTRATION");
