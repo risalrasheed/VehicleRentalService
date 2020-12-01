@@ -163,7 +163,7 @@ public class Registration extends javax.swing.JFrame {
               else {
                   if(password.equals(repassword)) {
                     
-                        pst = con.prepareStatement("SELECT * FROM vehicle_rental.users WHERE username = ?");
+                        pst = con.prepareStatement("SELECT * FROM `vehicle_rental`.`users` WHERE username = ?");
                         pst.setString(1,username);
                         //pst.setString(2,HashingPassword.generateHash(password));
                         //pst.setInt(3,cb_loginas.getSelectedIndex());
