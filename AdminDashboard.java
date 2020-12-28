@@ -6,6 +6,7 @@
 package vehiclerentalservice;
 
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.border.Border;
 
 /**
@@ -290,82 +291,162 @@ public class AdminDashboard extends javax.swing.JFrame {
 
     private void btn_profileiconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_profileiconMouseEntered
         // TODO add your handling code here:
-        btn_profileicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/profile-icon-color2.jpg")));
+        try {
+           btn_profileicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/profile-icon-color2.jpg"))); 
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null,"Error. Contact admin.");
+        }
+        
     }//GEN-LAST:event_btn_profileiconMouseEntered
 
     private void btn_profileiconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_profileiconMouseExited
         // TODO add your handling code here:
-        btn_profileicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/profile-icon-color3.jpg")));
+        try {
+            btn_profileicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/profile-icon-color3.jpg")));
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null,"Error. Contact admin.");
+        }
+        
     }//GEN-LAST:event_btn_profileiconMouseExited
 
     private void btn_messageiconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_messageiconMouseEntered
         // TODO add your handling code here:
-        btn_messageicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/message-icon-color2.jpg")));
+        try {
+            btn_messageicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/message-icon-color2.jpg")));
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null,"Error. Contact admin.");
+        }
+        
     }//GEN-LAST:event_btn_messageiconMouseEntered
 
     private void btn_messageiconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_messageiconMouseExited
         // TODO add your handling code here:
-        btn_messageicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/message-icon-color3.jpg")));
+        try {
+            btn_messageicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/message-icon-color3.jpg")));
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null,"Error. Contact admin.");
+        }
+        
     }//GEN-LAST:event_btn_messageiconMouseExited
 
     private void btn_calendariconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_calendariconMouseEntered
         // TODO add your handling code here:
-        btn_calendaricon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/calendar-icon-color2.jpg")));
+        try {
+            btn_calendaricon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/calendar-icon-color2.jpg")));
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null,"Error. Contact admin.");
+        }
+        
     }//GEN-LAST:event_btn_calendariconMouseEntered
 
     private void btn_calendariconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_calendariconMouseExited
         // TODO add your handling code here:
-        btn_calendaricon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/calendar-icon-color3.jpg")));
+        try {
+            btn_calendaricon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/calendar-icon-color3.jpg")));
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null,"Error. Contact admin.");
+        }
+        
     }//GEN-LAST:event_btn_calendariconMouseExited
 
     private void btn_passwordiconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_passwordiconMouseEntered
         // TODO add your handling code here:
-        btn_passwordicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/password-icon-color2.jpg")));
+        try {
+            btn_passwordicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/password-icon-color2.jpg")));
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null,"Error. Contact admin.");
+        }
+        
     }//GEN-LAST:event_btn_passwordiconMouseEntered
 
     private void btn_passwordiconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_passwordiconMouseExited
         // TODO add your handling code here:
-        btn_passwordicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/password-icon-color3.jpg")));
+        try {
+            btn_passwordicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/password-icon-color3.jpg")));
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null,"Error. Contact admin.");
+        }
+        
     }//GEN-LAST:event_btn_passwordiconMouseExited
 
     private void btn_cariconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cariconMouseEntered
         // TODO add your handling code here:
-        btn_caricon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/car-icon-color2.jpg")));
+        try {
+            btn_caricon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/car-icon-color2.jpg")));
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null,"Error. Contact admin.");
+        }
+        
     }//GEN-LAST:event_btn_cariconMouseEntered
 
     private void btn_cariconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cariconMouseExited
         // TODO add your handling code here:
-        btn_caricon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/car-icon-color1.jpg")));
+        try {
+            btn_caricon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/car-icon-color1.jpg")));
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null,"Error. Contact admin.");
+        }
+        
     }//GEN-LAST:event_btn_cariconMouseExited
 
     private void btn_usersiconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_usersiconMouseEntered
         // TODO add your handling code here:
-        btn_usersicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/users-icon-color2.jpg")));
+        try {
+            btn_usersicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/users-icon-color2.jpg")));
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null,"Error. Contact admin.");
+        }
+        
     }//GEN-LAST:event_btn_usersiconMouseEntered
 
     private void btn_usersiconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_usersiconMouseExited
         // TODO add your handling code here:
-        btn_usersicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/users-icon-color1.jpg")));
+        try {
+            btn_usersicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/users-icon-color1.jpg")));
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null,"Error. Contact admin.");
+        }
+        
     }//GEN-LAST:event_btn_usersiconMouseExited
 
     private void btn_adminiconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_adminiconMouseEntered
         // TODO add your handling code here:
-        btn_adminicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/admin-icon-color2.jpg")));
+        try {
+            btn_adminicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/admin-icon-color2.jpg")));
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null,"Error. Contact admin.");
+        }
+        
     }//GEN-LAST:event_btn_adminiconMouseEntered
 
     private void btn_adminiconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_adminiconMouseExited
         // TODO add your handling code here:
-        btn_adminicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/admin-icon-color1.jpg")));
+        try {
+            btn_adminicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/admin-icon-color1.jpg")));
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null,"Error. Contact admin.");
+        }
+        
     }//GEN-LAST:event_btn_adminiconMouseExited
 
     private void btn_bookingsiconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_bookingsiconMouseEntered
         // TODO add your handling code here:
-        btn_bookingsicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/bookings-icon-color2.jpg")));
+        try {
+            btn_bookingsicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/bookings-icon-color2.jpg")));
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null,"Error. Contact admin.");
+        }
+        
     }//GEN-LAST:event_btn_bookingsiconMouseEntered
 
     private void btn_bookingsiconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_bookingsiconMouseExited
         // TODO add your handling code here:
-        btn_bookingsicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/bookings-icon-color1.jpg")));
+        try {
+            btn_bookingsicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vehiclerentalservice/admin_images/bookings-icon-color1.jpg")));
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null,"Error. Contact admin.");
+        }
+        
     }//GEN-LAST:event_btn_bookingsiconMouseExited
 
     /**

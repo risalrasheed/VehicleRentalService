@@ -121,6 +121,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Remove Car"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_removecarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_updatecar">
           <Properties>
@@ -135,6 +138,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Update Car"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_updatecarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_cardetails">
           <Properties>
@@ -149,6 +155,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Car Details"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_cardetailsActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lbl_cars">
           <Properties>
@@ -174,6 +183,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Add Car"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_addcarActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

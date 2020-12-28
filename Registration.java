@@ -190,22 +190,25 @@ public class Registration extends javax.swing.JFrame {
             }
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null,"Connection Error");
-            ex.printStackTrace();
+            
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null,"Database State Error");
-            ex.printStackTrace();
-        }
-        finally {
-            try {
-                if(pst!=null)
-                    pst.close();
-                if(con!=null)
-                    con.close();
-            } catch(Exception e) {
-                JOptionPane.showMessageDialog(null,"Connection Error");
-                e.printStackTrace();
-            }
             
+        } finally {
+            if(con!=null) {
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null,"Database Error. Contact admin.");
+                }
+            }
+            if(pst!=null) {
+                try {
+                    pst.close();
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null,"Database Error. Contact admin.");
+                }
+            }
         }
     }//GEN-LAST:event_btn_registerActionPerformed
 
