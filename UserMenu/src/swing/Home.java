@@ -14,7 +14,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import java.lang.Exception;
 
 /**
  *
@@ -39,11 +38,19 @@ public class Home extends javax.swing.JFrame {
         startDate.setVisible(false);
         endDate.setVisible(false);
         resetColor(new JPanel[]{btn_2,btn_3,btn_4}, new JPanel[]{ind_2,ind_3, ind_4});
+        Login login = new Login();
+        uname = login.uname;
+        uid =String.valueOf(login.uid);
+        System.out.println(getuname());
+        jLabel12.setVisible(true);
+        super.update(this.getGraphics());
+        jPanel3.revalidate();
     }
     public void viewHome(){
         homePanel.setVisible(true);
         makeBooking.setVisible(false);
         cancelPanel.setVisible(false);
+        
     }
     
     public void viewMake(){
@@ -68,6 +75,7 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         side_pane = new javax.swing.JPanel();
         btn_1 = new javax.swing.JPanel();
         ind_1 = new javax.swing.JPanel();
@@ -92,9 +100,9 @@ public class Home extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel15 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         btn_exit = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         button1 = new java.awt.Button();
         jLabel13 = new javax.swing.JLabel();
@@ -122,6 +130,17 @@ public class Home extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         btn_6 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -424,6 +443,11 @@ public class Home extends javax.swing.JFrame {
 
         jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 270, 90));
 
+        jLabel12.setFont(new java.awt.Font("Segoe UI Light", 1, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Milan Shah");
+        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, -1, 30));
+
         btn_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_Exit_25px.png"))); // NOI18N
         btn_exit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_exit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -435,11 +459,6 @@ public class Home extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/imge_1.jpg"))); // NOI18N
         jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 86, -1));
-
-        jLabel12.setFont(new java.awt.Font("Segoe UI Light", 1, 24)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Milan Shah");
-        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, 30));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 52)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -887,7 +906,7 @@ public class Home extends javax.swing.JFrame {
     private void btn_5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_5MousePressed
         // TODO add your handling code here:
         viewHome();
-        String[] col_names={"SL","Car Model","Car Brand","Start Date","End Date"};
+        String[] col_names={"Booking ID","Car Model","Car Brand","Start Date","End Date"};
         try
         {
             con = new Connector().getCon();
@@ -1078,6 +1097,9 @@ public class Home extends javax.swing.JFrame {
         
     }
     
+    public String getuname(){
+        return uname;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton book_button;
@@ -1118,6 +1140,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1142,5 +1165,7 @@ public class Home extends javax.swing.JFrame {
     private String startd;
     private String endd;
     private String bookid;
+    public String uname;
+    public String uid;
     
 }
