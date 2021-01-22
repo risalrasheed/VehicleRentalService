@@ -988,6 +988,7 @@ public class Home extends javax.swing.JFrame {
     private void btn_5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_5MousePressed
         // TODO add your handling code here:
         viewHome();
+        jScrollPane1.setVisible(true);
         String[] col_names={"Booking ID","Car Model","Car Brand","Start Date","End Date"};
         try
         {
