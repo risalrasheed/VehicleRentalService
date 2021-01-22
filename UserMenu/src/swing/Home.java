@@ -31,8 +31,8 @@ public class Home extends javax.swing.JFrame {
         rs=null;
         setColor(btn_1); 
         ind_1.setOpaque(true);
+        jTable3.setVisible(false);
         book_button.setVisible(false);
-        vehicle_dropdown.setVisible(false);
         jScrollPane1.setVisible(false);
         cancelPanel.setVisible(false);
         startDate.setVisible(false);
@@ -42,6 +42,7 @@ public class Home extends javax.swing.JFrame {
         uname = login.uname;
         uid =String.valueOf(login.uid);
         System.out.println(getuname());
+        jScrollPane3.setVisible(false);
         jLabel12.setVisible(true);
         super.update(this.getGraphics());
         jPanel3.revalidate();
@@ -50,6 +51,8 @@ public class Home extends javax.swing.JFrame {
         homePanel.setVisible(true);
         makeBooking.setVisible(false);
         cancelPanel.setVisible(false);
+        vehiclePanel.setVisible(false);
+        jScrollPane3.setVisible(false);
         
     }
     
@@ -57,6 +60,7 @@ public class Home extends javax.swing.JFrame {
         makeBooking.setVisible(true);
         homePanel.setVisible(false);
         cancelPanel.setVisible(false);
+        vehiclePanel.setVisible(false);
         startDate.setVisible(true);
         endDate.setVisible(true);
         book_button.setVisible(true);
@@ -64,7 +68,15 @@ public class Home extends javax.swing.JFrame {
     public void viewCancel(){
         makeBooking.setVisible(false);
         homePanel.setVisible(false);
+        vehiclePanel.setVisible(false);
         cancelPanel.setVisible(true);
+    }
+    public void viewVehicle(){
+            jTable3.setVisible(true);
+            vehiclePanel.setVisible(true);
+            makeBooking.setVisible(false);
+            jScrollPane3.setVisible(true);
+            
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -75,7 +87,6 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         side_pane = new javax.swing.JPanel();
         btn_1 = new javax.swing.JPanel();
         ind_1 = new javax.swing.JPanel();
@@ -115,13 +126,18 @@ public class Home extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         makeBooking = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
-        vehicle_dropdown = new javax.swing.JComboBox<>();
         startDate = new com.toedter.calendar.JDateChooser();
         endDate = new com.toedter.calendar.JDateChooser();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         book_button = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        vehiclePanel = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
         cancelPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -131,21 +147,15 @@ public class Home extends javax.swing.JFrame {
         btn_6 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setLocationByPlatform(true);
         setUndecorated(true);
+        addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                formComponentAdded(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         side_pane.setBackground(new java.awt.Color(225, 95, 65));
@@ -463,7 +473,7 @@ public class Home extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 52)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("21");
+        jLabel6.setText("22");
 
         button1.setBackground(new java.awt.Color(230, 103, 103));
         button1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -558,7 +568,10 @@ public class Home extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.setColumnSelectionAllowed(true);
+        jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
+        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -613,15 +626,6 @@ public class Home extends javax.swing.JFrame {
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("Create A Booking");
 
-        vehicle_dropdown.setBackground(new java.awt.Color(234, 134, 133));
-        vehicle_dropdown.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        vehicle_dropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6" }));
-        vehicle_dropdown.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                vehicle_dropdownActionPerformed(evt);
-            }
-        });
-
         startDate.setDateFormatString("YYYY-MM-DD");
 
         endDate.setDateFormatString("YYYY-MM-DD");
@@ -649,6 +653,23 @@ public class Home extends javax.swing.JFrame {
                 book_buttonMouseClicked(evt);
             }
         });
+        book_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book_buttonActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Select");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout makeBookingLayout = new javax.swing.GroupLayout(makeBooking);
         makeBooking.setLayout(makeBookingLayout);
@@ -669,11 +690,11 @@ public class Home extends javax.swing.JFrame {
                             .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(70, 70, 70)
                         .addGroup(makeBookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(makeBookingLayout.createSequentialGroup()
-                                .addComponent(vehicle_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(endDate, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))))
+                            .addComponent(endDate, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                            .addGroup(makeBookingLayout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(69, 69, 69))
             .addGroup(makeBookingLayout.createSequentialGroup()
                 .addGap(270, 270, 270)
@@ -685,11 +706,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(makeBookingLayout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(jLabel16)
-                .addGap(67, 67, 67)
-                .addGroup(makeBookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(vehicle_dropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17))
-                .addGap(39, 39, 39)
+                .addGap(66, 66, 66)
                 .addGroup(makeBookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
                     .addComponent(jLabel19))
@@ -697,15 +714,84 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(makeBookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(startDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(endDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addGroup(makeBookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(jButton1))
+                .addGap(70, 70, 70)
                 .addComponent(book_button, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(132, 132, 132))
         );
 
-        vehicle_dropdown.getAccessibleContext().setAccessibleName("");
-        vehicle_dropdown.getAccessibleContext().setAccessibleDescription("");
-
         getContentPane().add(makeBooking, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
+
+        vehiclePanel.setBackground(new java.awt.Color(234, 134, 133));
+
+        jTable3.setBackground(new java.awt.Color(234, 134, 133));
+        jTable3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jTable3.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(jTable3);
+        jTable3.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+
+        jLabel23.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setText("Choose a car");
+
+        jLabel24.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setText("SELECT");
+        jLabel24.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel24.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel24MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout vehiclePanelLayout = new javax.swing.GroupLayout(vehiclePanel);
+        vehiclePanel.setLayout(vehiclePanelLayout);
+        vehiclePanelLayout.setHorizontalGroup(
+            vehiclePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(vehiclePanelLayout.createSequentialGroup()
+                .addGap(215, 215, 215)
+                .addGroup(vehiclePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(221, Short.MAX_VALUE))
+            .addGroup(vehiclePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(vehiclePanelLayout.createSequentialGroup()
+                    .addGap(99, 99, 99)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(99, Short.MAX_VALUE)))
+        );
+        vehiclePanelLayout.setVerticalGroup(
+            vehiclePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(vehiclePanelLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 360, Short.MAX_VALUE)
+                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
+            .addGroup(vehiclePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(vehiclePanelLayout.createSequentialGroup()
+                    .addGap(114, 114, 114)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(115, Short.MAX_VALUE)))
+        );
+
+        getContentPane().add(vehiclePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
 
         cancelPanel.setBackground(new java.awt.Color(234, 134, 133));
 
@@ -817,7 +903,7 @@ public class Home extends javax.swing.JFrame {
          setColor(btn_3); 
         ind_3.setOpaque(true);
         resetColor(new JPanel[]{btn_2,btn_1,btn_4}, new JPanel[]{ind_2,ind_1, ind_4});
-        vehicle_dropdown.setVisible(true);
+ 
 
     }//GEN-LAST:event_btn_3MousePressed
 
@@ -828,7 +914,7 @@ public class Home extends javax.swing.JFrame {
         ind_4.setOpaque(true);
         resetColor(new JPanel[]{btn_2,btn_3,btn_1}, new JPanel[]{ind_2,ind_3, ind_1});
         
-        String[] col_names={"SL","Car Model","Car Brand","Start Date","End Date"};
+        String[] col_names={"Booking ID","Car Model","Car Brand","Start Date","End Date"};
         try
         {
             con = new Connector().getCon();
@@ -899,10 +985,6 @@ public class Home extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btn_exitMousePressed
 
-    private void vehicle_dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vehicle_dropdownActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_vehicle_dropdownActionPerformed
-
     private void btn_5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_5MousePressed
         // TODO add your handling code here:
         viewHome();
@@ -950,14 +1032,11 @@ public class Home extends javax.swing.JFrame {
 
     private void book_buttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book_buttonMouseClicked
         // TODO add your handling code here:
-        Object selectedItem = vehicle_dropdown.getSelectedItem();
         setVisible(true);
-        if (selectedItem != null)
-        {
-            vstr = selectedItem.toString();
-        }
-        startd = ((JTextField)startDate.getDateEditor().getUiComponent()).getText();
-        endd = ((JTextField) endDate.getDateEditor().getUiComponent()).getText();
+        System.out.println(vstr);
+        vstr = jTable3.getModel().getValueAt(r, 0).toString();
+     
+        
         String str =("insert into booking values(0, "+ vstr +", 1,date(\""+startd+"\"),date(\"" +endd+"\"));");
         try
         {
@@ -1003,6 +1082,7 @@ public class Home extends javax.swing.JFrame {
 
     private void btn_6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_6MousePressed
         // TODO add your handling code here:
+        
         String bookid = jTextField2.getText();
         if (bookid == null)
         {
@@ -1048,6 +1128,77 @@ public class Home extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btn_6MousePressed
+
+    private void book_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book_buttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book_buttonActionPerformed
+
+    private void formComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_formComponentAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formComponentAdded
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        startd = ((JTextField)startDate.getDateEditor().getUiComponent()).getText();
+        endd = ((JTextField) endDate.getDateEditor().getUiComponent()).getText();
+        if(startDate==null || endDate==null){
+            JOptionPane.showMessageDialog(null,"Pick A Date!");
+        }
+        else{
+            viewVehicle();
+            String[] col_names={"Vehicle ID","Car Brand","Car Model","Condition"};
+            try
+            {
+                con = new Connector().getCon();
+                String str = "select r.id, v.brand, v.model_name, r.car_condition from rental_car r inner join vehicle_model v on v.id = r.model where r.id not in (SELECT car_id FROM vehicle_rental.booking AS B WHERE (B.start_date >='"+startd+"'AND B.end_date <= '"+endd+"' )OR (B.start_date >= '"+startd+"' AND B.start_date<= '"+endd+"' ) OR (B.end_date >= '"+startd+"' AND B.end_date<= '"+endd+"' ));";
+                pst=con.prepareStatement(str);
+                rs=pst.executeQuery();
+                jTable3.setModel(DbUtils.resultSetToTableModel(rs));
+                for(int i=0;i<col_names.length;i++)
+                    jTable3.getColumnModel().getColumn(i).setHeaderValue(col_names[i]);
+
+            }
+            catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null,"Database Error. Contact admin.");
+                ex.printStackTrace();
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null,e);
+            }
+            finally {
+                if(con!=null) {
+                    try {
+
+                        con.close();
+                    } catch (SQLException ex) {
+                        JOptionPane.showMessageDialog(null,"Database Error. Contact admin.");
+                        ex.printStackTrace();
+                    }
+                }
+                if(pst!=null) {
+                    try {
+                        pst.close();
+                    } catch (SQLException ex) {
+                        JOptionPane.showMessageDialog(null,"Database Error. Contact admin.");
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jLabel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel24MouseClicked
+        // TODO add your handling code here:
+        int r=jTable3.getSelectedRow();
+        System.out.println(jTable3.getModel().getValueAt(r, 0).toString());
+        
+        viewMake();
+    }//GEN-LAST:event_jLabel24MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1118,6 +1269,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel ind_2;
     private javax.swing.JPanel ind_3;
     private javax.swing.JPanel ind_4;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1133,6 +1285,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1140,7 +1294,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1148,15 +1301,17 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JPanel makeBooking;
     private javax.swing.JPanel side_pane;
     private com.toedter.calendar.JDateChooser startDate;
-    private javax.swing.JComboBox<String> vehicle_dropdown;
+    private javax.swing.JPanel vehiclePanel;
     // End of variables declaration//GEN-END:variables
     private Connection con;
     private PreparedStatement pst;
@@ -1167,5 +1322,6 @@ public class Home extends javax.swing.JFrame {
     private String bookid;
     public String uname;
     public String uid;
+    public int r;
     
 }
